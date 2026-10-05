@@ -88,9 +88,10 @@ with aba2:
 
     colA, colB = st.columns(2)
     with colA:
-        st.subheader("Distribuição do Valor Econômico")
-        fig_box = px.box(df_filtrado, x='regiao', y='valor_producao', color='cultura', title="Valor Econômico por Região e Cultura")
-        st.plotly_chart(fig_box, use_container_width=True)
+        st.subheader("Comparativo por Região")
+        df_regiao = df_filtrado.groupby('regiao')['valor_producao'].sum().reset_index()
+        fig_regiao = px.bar(df_regiao, x='regiao', y='valor_producao', color='regiao', title="Valor Econômico por Região")
+        st.plotly_chart(fig_regiao, use_container_width=True)
     with colB:
         st.subheader("Proporção de Área Plantada")
         df_pizza = df_filtrado.groupby('cultura')['area_plantada_ha'].sum().reset_index()
