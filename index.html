@@ -6,15 +6,14 @@
     <title>Análise de Produção Agrícola no Brasil | Projeto G1</title>
     <style>
         :root {
-            /* Nova paleta com tema Agrícola/Natureza */
-            --primary-color: #2e7d32; /* Verde floresta */
-            --primary-hover: #1b5e20; /* Verde escuro */
-            --bg-gradient-start: #f4f6f0; /* Bege/Verde muito claro */
+            --primary-color: #2e7d32; 
+            --primary-hover: #1b5e20;
+            --bg-gradient-start: #f4f6f0;
             --bg-gradient-end: #e5e8e1;
             --card-bg: #ffffff;
             --text-color: #2c3e50;
             --text-muted: #546e7a;
-            --accent-color: #f57f17; /* Toque de laranja/amarelo para contraste */
+            --accent-color: #f57f17; 
         }
 
         body {
@@ -37,10 +36,10 @@
             gap: 24px;
         }
 
-        /* Animação suave para os cartões */
+       
         .card, header {
             background: var(--card-bg);
-            border-radius: 16px; /* Bordas mais arredondadas */
+            border-radius: 16px; 
             box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -52,7 +51,7 @@
 
         header {
             padding: 35px;
-            border-top: 6px solid var(--primary-color); /* Borda superior em vez de lateral */
+            border-top: 6px solid var(--primary-color); 
         }
 
         header h1 {
@@ -100,7 +99,7 @@
             background-color: #eceff1;
             color: #37474f;
             text-decoration: none;
-            border-radius: 30px; /* Estilo pílula */
+            border-radius: 30px; 
             font-weight: 600;
             font-size: 0.9em;
             transition: all 0.2s;
@@ -137,7 +136,7 @@
         }
 
         li::marker {
-            color: var(--accent-color); /* Marcadores da lista em tom de destaque */
+            color: var(--accent-color); 
         }
 
         .grid-indicators {
@@ -147,7 +146,7 @@
         }
 
         .indicator-item {
-            background: #f1f8e9; /* Fundo verde super claro */
+            background: #f1f8e9; 
             padding: 18px;
             border-radius: 12px;
             border-left: 4px solid var(--primary-color);
@@ -171,7 +170,6 @@
             line-height: 1.4;
         }
 
-        /* Classe específica para as tecnologias */
         .tech-tag {
             background: #e8f5e9;
             color: var(--primary-hover);
@@ -261,7 +259,7 @@
         <div class="card">
             <h2>Tecnologias utilizadas</h2>
             <div class="btn-group">
-                <!-- Substituí os estilos inline sujos por uma classe CSS limpa (.tech-tag) -->
+                
                 <span class="tech-tag">Python</span>
                 <span class="tech-tag">Pandas</span>
                 <span class="tech-tag">Plotly</span>
