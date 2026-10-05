@@ -3,39 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise de Produção Agrícola no Brasil (Tema 29)</title>
+    <title>Análise de Produção Agrícola no Brasil | Projeto G1</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 40px; background-color: #f4f4f9; color: #333; text-align: center; }
-        .container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h1 { color: #2E7D32; margin-bottom: 10px; }
-        p { font-size: 16px; color: #555; }
-        .info-box { background: #e8f5e9; padding: 15px; border-radius: 5px; margin: 20px 0; text-align: left; border-left: 5px solid #2E7D32; }
-        .btn { display: inline-block; padding: 12px 25px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; transition: background 0.3s; }
-        .btn:hover { background-color: #388E3C; }
-        .footer { margin-top: 30px; font-size: 14px; color: #777; }
+        :root {
+            --primary-color: #2E7D32;
+            --secondary-color: #4CAF50;
+            --bg-color: #f4f6f8;
+            --text-color: #333;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 900px;
+            margin: -30px auto 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .card-info {
+            background: #e8f5e9;
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        .card-info h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background-color: #1b5e20;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: #0277bd;
+        }
+        .btn-secondary:hover {
+            background-color: #01579b;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+
+    <header>
         <h1>Análise de Produção Agrícola no Brasil</h1>
-        <p><strong>Projeto G2 — Tema 29</strong></p>
+        <p>Avaliação G1 — Linguagem de Programação: Análise e Visualização de Dados com Python</p>
+    </header>
+
+    <div class="container">
         
-        <div class="info-box">
+        <div class="card-info">
+            <h3>Identificação Acadêmica</h3>
             <p><strong>Aluno:</strong> Luan Fernando Oliveira Pedrosa</p>
+            <p><strong>Curso:</strong> Sistemas de Informação</p>
+            <p><strong>Instituição:</strong> Centro Universitário La Salle (Unilasalle-RJ)</p>
             <p><strong>Professor:</strong> Alexandre Neves Louzada</p>
-            <p><strong>Instituição / Disciplina:</strong> Centro Universitário La Salle (Unilasalle-RJ) — Sistemas de Informação</p>
         </div>
 
-        <p>Aplicação analítica desenvolvida para investigar padrões de produção agrícola, produtividade por hectare, impacto de variáveis climáticas e desempenho regional no Brasil entre 2015 e 2024.</p>
-        
-        <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;">
-        
-        <p>Acesse o repositório completo e o código-fonte desenvolvido através do botão abaixo:</p>
-        <a href="https://github.com/LuanFernando0/projeto-producao-agricola" class="btn" target="_blank">Ver Repositório no GitHub</a>
-        
-        <div class="footer">
-            <p>Niterói, Rio de Janeiro — 2026</p>
+        <h2>Sobre o Projeto</h2>
+        <p>Este projeto consiste no desenvolvimento de uma aplicação analítica completa para investigar padrões de produção agrícola, produtividade por hectare, impacto de variáveis climáticas (volume de chuvas e temperatura) e desempenho regional no Brasil entre os anos de 2015 e 2024.</p>
+
+        <h2>Funcionalidades Desenvolvidas</h2>
+        <ul>
+            <li><strong>Análise Exploratória Avançada:</strong> Tratamento de dados, remoção de duplicatas, tratamento de nulos e engenharia de atributos via Pandas e Jupyter Notebook.</li>
+            <li><strong>Dashboard Interativo (Streamlit):</strong> Aplicação web estruturada com filtros múltiplos, KPIs dinâmicos, gráficos temporais e regionais.</li>
+            <li><strong>Funcionalidades Avançadas:</strong> Persistência de dados utilizando SQLAlchemy/SQLite e consumo de API externa para contexto econômico.</li>
+            <li><strong>Visualizações de Alta Qualidade:</strong> Gráficos dinâmicos gerados através de Plotly, Seaborn e Matplotlib.</li>
+        </ul>
+
+        <h2>Acesse as Entregas do Projeto</h2>
+        <div class="btn-group">
+            <a href="https://github.com/LuanFernando0/projeto-producao-agricola" class="btn" target="_blank">Repositório GitHub</a>
+            <a href="https://SEU-LINK-DO-STREAMLIT.streamlit.app" class="btn btn-secondary" target="_blank">Dashboard Streamlit Cloud</a>
         </div>
+
     </div>
+
+    <footer>
+        <p>Niterói, Rio de Janeiro — 2026 | Centro Universitário La Salle</p>
+    </footer>
+
 </body>
 </html>
