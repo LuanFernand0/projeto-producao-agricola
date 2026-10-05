@@ -33,13 +33,19 @@ if estados:
     df_filtrado = df_filtrado[df_filtrado['uf'].isin(estados)]
 if culturas:
     df_filtrado = df_filtrado[df_filtrado['cultura'].isin(culturas)]
-
+    
 st.markdown("---")
 col1, col2, col3, col4 = st.columns(4)
-col1.metric("Produção Total", f"{df_filtrado['producao_toneladas'].sum():,.0f} t")
-col2.metric("Valor Econômico", f"R$ {df_filtrado['valor_producao'].sum():,.2f}")
-col3.metric("Área Plantada", f"{df_filtrado['area_plantada_ha'].sum():,.0f} ha")
-col4.metric("Produtividade Média", f"{df_filtrado['produtividade'].mean():,.2f} t/ha")
+
+prod_total = f"{df_filtrado['producao_toneladas'].sum():,.0f}".replace(',', '.')
+val_econ = f"R$ {df_filtrado['valor_producao'].sum():,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+area_plant = f"{df_filtrado['area_plantada_ha'].sum():,.0f}".replace(',', '.')
+prod_media = f"{df_filtrado['produtividade'].mean():,.2f}".replace('.', ',')
+
+col1.metric("Produção Total", f"{prod_total} t")
+col2.metric("Valor Econômico", val_econ)
+col3.metric("Área Plantada", f"{area_plant} ha")
+col4.metric("Produtividade Média", f"{prod_media} t/ha")
 
 st.markdown("---")
 tab1, tab2, tab3 = st.tabs(["Evolução e Regional", "Culturas e Clima", "Base de Dados e Conclusão"])
