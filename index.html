@@ -6,119 +6,189 @@
     <title>Análise de Produção Agrícola no Brasil | Projeto G1</title>
     <style>
         :root {
-            --primary-color: #1a73e8;
-            --bg-color: #e0e0e0; 
+            /* Nova paleta com tema Agrícola/Natureza */
+            --primary-color: #2e7d32; /* Verde floresta */
+            --primary-hover: #1b5e20; /* Verde escuro */
+            --bg-gradient-start: #f4f6f0; /* Bege/Verde muito claro */
+            --bg-gradient-end: #e5e8e1;
             --card-bg: #ffffff;
-            --text-color: #333;
+            --text-color: #2c3e50;
+            --text-muted: #546e7a;
+            --accent-color: #f57f17; /* Toque de laranja/amarelo para contraste */
         }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
             color: var(--text-color);
             margin: 0;
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
+
         .main-container {
             width: 100%;
             max-width: 900px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 24px;
         }
+
+        /* Animação suave para os cartões */
+        .card, header {
+            background: var(--card-bg);
+            border-radius: 16px; /* Bordas mais arredondadas */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(46, 125, 50, 0.08);
+        }
+
         header {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            border-left: 6px solid #1a73e8;
+            padding: 35px;
+            border-top: 6px solid var(--primary-color); /* Borda superior em vez de lateral */
         }
+
         header h1 {
-            margin: 0 0 10px 0;
-            color: #1a73e8;
-            font-size: 1.8em;
+            margin: 0 0 12px 0;
+            color: var(--primary-color);
+            font-size: 2em;
+            letter-spacing: -0.5px;
         }
+
         header p {
-            margin: 5px 0;
-            color: #555;
-            font-size: 0.95em;
+            margin: 6px 0;
+            color: var(--text-muted);
+            font-size: 1em;
         }
+
         .card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 30px;
         }
+
         .card h2 {
             margin-top: 0;
-            color: #1a73e8;
-            font-size: 1.3em;
-        }
-        .card p {
-            color: #555;
-            font-size: 0.95em;
+            color: var(--primary-color);
+            font-size: 1.4em;
+            border-bottom: 2px solid #e8f5e9;
+            padding-bottom: 10px;
             margin-bottom: 20px;
         }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
         .btn-group {
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
         }
+
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #2b3e50;
-            color: white;
+            padding: 12px 24px;
+            background-color: #eceff1;
+            color: #37474f;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 30px; /* Estilo pílula */
             font-weight: 600;
             font-size: 0.9em;
-            transition: background 0.2s;
+            transition: all 0.2s;
+            border: 1px solid #cfd8dc;
         }
+
         .btn:hover {
-            background-color: #1a252f;
+            background-color: #cfd8dc;
+            color: #263238;
         }
+
         .btn-primary {
-            background-color: #1a73e8;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
         }
+
         .btn-primary:hover {
-            background-color: #1557b0;
+            background-color: var(--primary-hover);
+            color: white;
+            box-shadow: 0 6px 15px rgba(46, 125, 50, 0.3);
         }
+
         ul {
-            color: #555;
+            color: var(--text-muted);
             padding-left: 20px;
-            font-size: 0.95em;
+            font-size: 1em;
+            line-height: 1.6;
         }
+
         li {
-            margin-bottom: 6px;
+            margin-bottom: 10px;
         }
+
+        li::marker {
+            color: var(--accent-color); /* Marcadores da lista em tom de destaque */
+        }
+
         .grid-indicators {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
         }
+
         .indicator-item {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #1a73e8;
+            background: #f1f8e9; /* Fundo verde super claro */
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+            transition: background 0.2s;
         }
+        
+        .indicator-item:hover {
+            background: #e8f5e9;
+        }
+
         .indicator-item h4 {
-            margin: 0 0 5px 0;
-            color: #333;
+            margin: 0 0 8px 0;
+            color: var(--primary-hover);
+            font-size: 1.05em;
         }
+
         .indicator-item p {
             margin: 0;
-            font-size: 0.85em;
-            color: #666;
+            font-size: 0.9em;
+            color: var(--text-muted);
+            line-height: 1.4;
         }
+
+        /* Classe específica para as tecnologias */
+        .tech-tag {
+            background: #e8f5e9;
+            color: var(--primary-hover);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            cursor: default;
+            border: 1px solid #c8e6c9;
+        }
+
         footer {
             text-align: center;
-            padding: 20px;
-            color: #777;
-            font-size: 0.85em;
+            padding: 30px 20px;
+            color: #78909c;
+            font-size: 0.9em;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -130,11 +200,13 @@
             <p><strong>Aluno:</strong> Luan Fernando Oliveira Pedrosa | <strong>Curso:</strong> Sistemas de Informação (Unilasalle-RJ)</p>
             <p><strong>Professor:</strong> Alexandre Neves Louzada | <strong>Disciplina:</strong> Linguagem de Programação — Análise e Visualização de Dados com Python</p>
         </header>
+        
         <div class="card">
             <h2>Sobre o projeto</h2>
             <p>Este projeto consiste no desenvolvimento de uma aplicação analítica completa para investigar padrões de produção agrícola, produtividade por hectare, impacto de variáveis climáticas (volume de chuvas) e desempenho regional no Brasil entre os anos de 2015 e 2024.</p>
             <p>O objetivo principal é transformar uma base de dados bruta em um produto analítico interativo, estruturado e publicável, aplicando conceitos de engenharia de dados, visualização gráfica e tomada de decisão.</p>
         </div>
+        
         <div class="card">
             <h2>Arquivos do projeto</h2>
             <p>Acesse os principais componentes e descarregue os recursos analíticos:</p>
@@ -144,6 +216,7 @@
                 <a href="https://raw.githubusercontent.com/LuanFernand0/projeto-producao-agricola/main/dados/simulacao_producao_agricola_brasil.csv" class="btn" download>Baixar Base de Dados (.csv)</a>
             </div>
         </div>
+        
         <div class="card">
             <h2>Dashboard interativo</h2>
             <p>O dashboard principal foi desenvolvido com Streamlit e permite explorar os dados por meio de filtros, KPIs, gráficos dinâmicos e consultas regionais.</p>
@@ -151,6 +224,7 @@
                 <a href="https://projeto-appucao-agricola-j7qspjyapz9ywoynmus4cj.streamlit.app" class="btn btn-primary" target="_blank">Acessar Dashboard Streamlit</a>
             </div>
         </div>
+        
         <div class="card">
             <h2>Perguntas orientadoras do setor</h2>
             <ul>
@@ -161,6 +235,7 @@
                 <li>Quais regiões concentram a maior área plantada?</li>
             </ul>
         </div>
+        
         <div class="card">
             <h2>Indicadores analisados (KPIs)</h2>
             <div class="grid-indicators">
@@ -182,19 +257,20 @@
                 </div>
             </div>
         </div>
+        
         <div class="card">
             <h2>Tecnologias utilizadas</h2>
             <div class="btn-group">
-                <span class="btn" style="background: #e9ecef; color: #333; cursor: default;">Python</span>
-                <span class="btn" style="background: #e9ecef; color: #333; cursor: default;">Pandas</span>
-                <span class="btn" style="background: #e9ecef; color: #333; cursor: default;">Plotly</span>
-                <span class="btn" style="background: #e9ecef; color: #333; cursor: default;">Streamlit</span>
-                <span class="btn" style="background: #e9ecef; color: #333; cursor: default;">SQLAlchemy</span>
-                <span class="btn" style="background: #e9ecef; color: #333; cursor: default;">SQLite</span>
-                <span class="btn" style="background: #e9ecef; color: #333; cursor: default;">GitHub Pages</span>
+                <!-- Substituí os estilos inline sujos por uma classe CSS limpa (.tech-tag) -->
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Plotly</span>
+                <span class="tech-tag">Streamlit</span>
+                <span class="tech-tag">SQLAlchemy</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">GitHub Pages</span>
             </div>
         </div>
-
     </div>
 
     <footer>
