@@ -18,7 +18,7 @@ except:
 
 st.title("🌾 Análise de Produção Agrícola no Brasil (2015-2024)")
 st.markdown("**Aluno:** Luan Fernando Oliveira Pedrosa | **Professor:** Alexandre Neves Louzada")
-st.markdown("Dashboard interativo desenvolvido para a Avaliação G1 de Linguagem de Programação: Análise e Visualização de Dados.")
+st.markdown(" Análise e Visualização de Dados.")
 
 st.sidebar.header("Filtros Dinâmicos")
 anos = st.sidebar.slider("Período (Ano)", int(df['ano'].min()), int(df['ano'].max()), (int(df['ano'].min()), int(df['ano'].max())))
